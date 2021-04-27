@@ -1,5 +1,6 @@
 package morrisMen;
 import morrisMen.MorrisNode;
+// See MorrisBoard.hx it has comments that show the boad layout.
 @:structInit
 class NineMorrisBoard {
     var sx:     Float; // 100
