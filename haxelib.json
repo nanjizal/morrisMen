@@ -1,0 +1,12 @@
+{
+    "name"         : "morrisMen",
+    "url"          : "https://github.com/nanjizal/morrisMen#morrisMen",
+    "license"      : "MIT",
+    "tags"         : ["morris men" ],
+    "description"  : "morrisMen is data structure used for 9 men morris",
+    "version"      : "0.0.1-alpha",
+    "releasenote"  : "See https://github.com/nanjizal/morrisMen/blob/master/CHANGELOG.md",
+    "contributors" : ["Nanjizal"],
+    "classPath"    : "src",
+    "dependencies" : {}
+}
