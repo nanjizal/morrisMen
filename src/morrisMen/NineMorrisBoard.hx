@@ -14,10 +14,12 @@ class NineMorrisBoard {
     }
     public function generate(){
         var inaGap = inaWid/2;
-        var midWid = inaWid*3;
-        var midGap = midWid/2;
-        var outWid = midWid*3;
-        var outGap = outWid/2;
+        
+        var largeGap = inaGap*3;
+        var largeWid = largeGap*2;
+        
+        var midGap = inaGap*2;
+        var midWid = midGap*2;
 
         var dx = 0.;
         var dy = 0.;
@@ -25,13 +27,13 @@ class NineMorrisBoard {
         dx = sx;
         dy = sy;
         var ma: MorrisNode = { pos: { x: dx, y: dy }, name: 'ma' };
-        dx += outGap;
+        dx += largeGap;
         var mb: MorrisNode = { pos: { x: dx, y: dy }, name: 'mb' };
         ma.addFriend( mb );
-        dx += outGap;
+        dx += largeGap;
         var mc: MorrisNode = { pos: { x: dx, y: dy }, name: 'mc' };
         mb.addFriend( mc );
-    
+       
         // middle top row
         dx = sx + inaGap;
         dy = sy + inaGap;
@@ -42,7 +44,7 @@ class NineMorrisBoard {
         dx += midGap;
         var mf: MorrisNode = { pos: { x: dx, y: dy }, name: 'mf' };
         md.addFriend( mf );
-    
+        
         // inner top row 
         dx = sx + midGap;
         dy = sy + midGap;
@@ -53,10 +55,10 @@ class NineMorrisBoard {
         dx += inaGap;
         var mi: MorrisNode = { pos: { x: dx, y: dy }, name: 'mi' };
         mh.addFriend( mi );
-    
+        
         // whole middle row 
-        dx = sx + midGap;
-        dy = sy + midGap;
+        dx = sx;
+        dy = sy + largeGap;
         var mj: MorrisNode = { pos: { x: dx, y: dy }, name: 'mj' };
         ma.addFriend( mj );
         dx += inaGap;
@@ -75,9 +77,9 @@ class NineMorrisBoard {
         dx += inaGap;
         var mo: MorrisNode = { pos: { x: dx, y: dy }, name: 'mo' };
         mo.addFriends( [ mc, mn ] );
-    
+        
         // inner bottom row
-        var dx = sx + midWid;
+        var dx = sx + midGap;
         var dy = sy + midWid;
         var mp: MorrisNode = { pos: { x: dx, y: dy }, name: 'mp' };
         ml.addFriend( mp );
@@ -99,22 +101,22 @@ class NineMorrisBoard {
         dx += midGap;
         var mu: MorrisNode = { pos: { x: dx, y: dy }, name: 'mu' };
         mu.addFriends( [ mn, mt ] );
-    
+        
         // bottom row 
         var dx = sx;
-        var dy = sy + outWid;
+        var dy = sy + largeWid;
         var mv: MorrisNode = { pos: { x: dx, y: dy }, name: 'mv' };
         mj.addFriend( mv );
-        dx += outGap;
+        dx += largeGap;
         var mw: MorrisNode = { pos: { x: dx, y: dy }, name: 'mw' };
         mw.addFriends( [ mt, mv ] );
-        dx += outGap;
+        dx += largeGap;
         var mx: MorrisNode = { pos: { x: dx, y: dy }, name: 'mx' };
         mx.addFriends( [ mo, mw ] );
         
-        morrisNodes = [ ma, mb, mc
+        morrisNodes = [ ma, mb, mc 
                       , md, me, mf
-                      , mg, mh, mi
+                     , mg, mh, mi
                       , mj, mk, ml, mm, mn, mo
                       , mp, mq, mr
                       , ms, mt, mu
