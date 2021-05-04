@@ -47,6 +47,15 @@ class MilData {
     }
 }
 @:structInit
+class MorrisConnection {
+    public var a: Matrix1x4;
+    public var b: Matrix1x4;
+    public function new( a: Matrix1x4, b: Matrix1x4 ){
+        this.a = a;
+        this.b = b;
+    }
+}
+@:structInit
 class MorrisNode {
     public var pos: Matrix1x2;
     public var pos3D: Matrix1x4;
